@@ -1,0 +1,39 @@
+name: integration-test
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  integration-test:
+    runs-on: ubuntu-latest
+    services:
+      docker:
+        image: docker:24.0.5
+        options: --privileged
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose
+
+      - name: Build and start containers
+        run: docker-compose up -d --build
+
+      - name: Wait for slurmctl to be ready
+        run: |
+          for i in {1..30}; do
+            if docker-compose exec slurmctl curl -sf http://localhost:6820/slurm/v0.0.36/clusters; then
+              break
+            fi
+            sleep 5
+          done
+      - name: Install package
+        run: pip install 
+
+      - name: Run integration tests
+        run: docker-compose run --rm app pytest tests/integration
