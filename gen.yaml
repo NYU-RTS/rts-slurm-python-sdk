@@ -1,0 +1,14 @@
+# gen.yaml ----------------------------------------------------------
+generatorName: python
+inputSpec:    openapi_specs.json
+
+# Git metadata ------------------------------------------------------
+gitHost:   github.com
+gitUserId: coldfront
+gitRepoId: slurm-python-sdk
+
+# Generator-specific properties 
+additionalProperties:
+  packageName:    slurmrest_python
+  projectName:    slurmrest_python
+  packageVersion: 0.0.1
