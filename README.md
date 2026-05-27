@@ -68,7 +68,10 @@ configuration = slurmrest_python.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: user
-configuration.api_key['user'] = os.environ["API_KEY"]
+configuration.api_key['user'] = os.environ["USERNAME"]
+
+# Configure API key authorization: token
+configuration.api_key['token'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['user'] = 'Bearer'
@@ -77,9 +80,6 @@ configuration.api_key['user'] = os.environ["API_KEY"]
 configuration = slurmrest_python.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
-
-# Configure API key authorization: token
-configuration.api_key['token'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
