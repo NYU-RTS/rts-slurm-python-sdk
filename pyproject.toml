@@ -1,6 +1,6 @@
 [project]
 name = "slurm-rest-api-client"
-version = "Slurm-25.05.4"
+version = "0.0.1"
 description = "A client library for accessing Slurm REST API"
 authors = []
 requires-python = ">=3.11"
