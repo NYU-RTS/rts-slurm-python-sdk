@@ -37,6 +37,7 @@ from .v0043_openapi_meta_client import V0043OpenapiMetaClient
 from .v0043_openapi_meta_plugin import V0043OpenapiMetaPlugin
 from .v0043_openapi_meta_slurm import V0043OpenapiMetaSlurm
 from .v0043_openapi_meta_slurm_version import V0043OpenapiMetaSlurmVersion
+from .v0043_openapi_resp import V0043OpenapiResp
 from .v0043_openapi_warning import V0043OpenapiWarning
 from .v0043_tres import V0043Tres
 from .v0043_uint_32_no_val_struct import V0043Uint32NoValStruct
@@ -79,6 +80,7 @@ __all__ = (
     "V0043OpenapiMetaPlugin",
     "V0043OpenapiMetaSlurm",
     "V0043OpenapiMetaSlurmVersion",
+    "V0043OpenapiResp",
     "V0043OpenapiWarning",
     "V0043Tres",
     "V0043Uint32NoValStruct",
