@@ -2,7 +2,7 @@ from http import HTTPStatus
 from typing import Any
 from urllib.parse import quote
 
-import httpx
+import httpx2 as httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.v0043_openapi_accounts_removed_resp import V0043OpenapiAccountsRemovedResp

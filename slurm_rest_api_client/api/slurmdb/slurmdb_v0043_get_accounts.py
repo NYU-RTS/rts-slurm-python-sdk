@@ -1,7 +1,7 @@
 from http import HTTPStatus
 from typing import Any
 
-import httpx
+import httpx2 as httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.v0043_openapi_accounts_resp import V0043OpenapiAccountsResp
